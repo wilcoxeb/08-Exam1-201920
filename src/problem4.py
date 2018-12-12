@@ -89,6 +89,9 @@ def problem4(number_of_stairs, step_size, starting_point, window):
             line.attach_to(window)
     window.render()
 
+# I do not understand why this isn't working i have placed the construction of the line a loop which should go through
+# the set number of times and then test if the value of k is even to print a magenta line otherwise to print a black one
+# and right now it is only printing one of each.
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
