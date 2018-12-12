@@ -286,20 +286,19 @@ def problem3b(m, r):
            which is approximately 12.020144157845959.
      """
     ###########################################################################
-    # TODO: 4. Implement and test this function.
+    # Done: 4. Implement and test this function.
     #          Tests have been written for you (above).
     ###########################################################################
     total = 0
     for k in range(m):
-        total = (1 + k / (r+k) ** k+1)
-        print(total)
+        total = total + ((1 + k) / (r+k) ** (k+1))
     return total
-# I talked to Mutchler about this during the test. Said there is a small bug but should get most points
 
 ###############################################################################
 # Our tests use the following to print error messages in red.
 # Do NOT change it.  You do NOT have to do anything with it.
 ###############################################################################
+
 
 def print_expected_result_of_test(arguments, expected,
                                   test_results, format_string, suffix=''):
