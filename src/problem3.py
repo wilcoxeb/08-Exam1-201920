@@ -291,9 +291,10 @@ def problem3b(m, r):
     ###########################################################################
     total = 0
     for k in range(m):
-        total = total + ((1 + k) / (r+(k+1) ** k+1))
+        total = (1 + k / (r+k) ** k+1)
+        print(total)
     return total
-
+# I talked to Mutchler about this during the test. Said there is a small bug but should get most points
 
 ###############################################################################
 # Our tests use the following to print error messages in red.

@@ -75,15 +75,18 @@ def problem4(number_of_stairs, step_size, starting_point, window):
     # -----------------------------------------------------------------------
     starting_point.attach_to(window)
 
-    for _ in range(number_of_stairs):
-        line2 = rg.Line(rg.Point(starting_point.x, starting_point.y), rg.Point(starting_point.x, starting_point.y - step_size))
-        line2.color = 'magenta'
-        line2.thickness = 5
-        line2.attach_to(window)
-        line = rg.Line(rg.Point(line2.end.x, line2.end.y), rg.Point(line2.end.x + step_size, line2.end.y))
-        line.color = 'black'
-        line.thickness = 5
-        line.attach_to(window)
+    for k in range(number_of_stairs):
+        if k % 2 == 0:
+            line2 = rg.Line(rg.Point(starting_point.x, starting_point.y), rg.Point(starting_point.x,
+                                                                                   starting_point.y - step_size))
+            line2.color = 'magenta'
+            line2.thickness = 5
+            line2.attach_to(window)
+        else:
+            line = rg.Line(rg.Point(line2.end.x, line2.end.y), rg.Point(line2.end.x + step_size, line2.end.y))
+            line.color = 'black'
+            line.thickness = 5
+            line.attach_to(window)
     window.render()
 
 
