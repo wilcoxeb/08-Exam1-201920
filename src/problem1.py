@@ -3,13 +3,13 @@ Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Mark Hays, Amanda Stouder, Aaron Wilkin, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and Emily Wilcox.
+"""  # Done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
 # -----------------------------------------------------------------------------
-# TODO: 2. Right-click on the  src  folder and
+# Done: 2. Right-click on the  src  folder and
 #              Mark Directory as ... Sources Root,
 #          if you have not already done so.
 # -----------------------------------------------------------------------------
@@ -101,9 +101,24 @@ def problem1(square, thickness, window):
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
+    # Done: 3. Implement and test this function.  SEE THE PICTURES in the PDF!
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    square.attach_to(window)
+    color = square.fill_color
+    circle = rg.Circle(rg.Point(square.center.x + square.length_of_each_side * 0.04,
+                                square.center.y + square.length_of_each_side), square.length_of_each_side * 0.5)
+    circle.fill_color = color
+    circle.outline_thickness = thickness
+    circle.attach_to(window)
+    line = rg.Line(rg.Point(circle.center.x, circle.center.y),
+                   rg.Point(square.center.x - (square.length_of_each_side * 0.5),
+                            square.center.y))
+    color_2 = square.outline_color
+    line.color = color_2
+    line.thickness = thickness
+    line.attach_to(window)
+    window.render()
 
 
 # -----------------------------------------------------------------------------
